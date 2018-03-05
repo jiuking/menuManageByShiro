@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+/.idea/libraries/Maven__org_springframework_spring_tx_5_0_4_RELEASE.xml
