@@ -14,9 +14,9 @@
     <param-value>classpath:spring-mybatis.xml</param-value>
   </context-param>
 
- <!-- <listener>
+<listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>-->
+  </listener>
 
   <!-- 防止Spring内存溢出监听器 -->
   <listener>
