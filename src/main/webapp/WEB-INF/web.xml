@@ -7,20 +7,48 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id="WebApp_ID" version="3.0">
   <display-name>Archetype Created Web Application</display-name>
+
+  <!-- Spring 和 mybatis的配置文件 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:spring-mybatis.xml</param-value>
+  </context-param>
+
+  <!-- 防止Spring内存溢出监听器 -->
+  <listener>
+    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+  </listener>
+
+  <!-- 编码过滤器 -->
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <async-supported>true</async-supported>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
   <servlet>
-    <servlet-name>springmvc</servlet-name>
+    <servlet-name>SpringMVC</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <!-- contextConfigLocation 是参数名称，该参数的值包含 Spring MVC 的配置文件路径 -->
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:springmvc-config.xml</param-value>
+      <param-value>classpath:spring-mvc.xml</param-value>
     </init-param>
     <!-- 在 Web 应用启动时立即加载 Servlet -->
     <load-on-startup>1</load-on-startup>
+    <async-supported>true</async-supported>
   </servlet>
   <!-- Servlet 映射声明 -->
   <servlet-mapping>
-    <servlet-name>springmvc</servlet-name>
+    <servlet-name>SpringMVC</servlet-name>
     <!-- 监听当前域的所有请求 -->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
@@ -28,4 +56,5 @@
   <welcome-file-list>
     <welcome-file>register.jsp</welcome-file>
   </welcome-file-list>
+
 </web-app>
