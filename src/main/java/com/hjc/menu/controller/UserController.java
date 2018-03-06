@@ -1,6 +1,7 @@
 package com.hjc.menu.controller;
 
 import com.hjc.menu.persistence.entity.User;
+import com.hjc.menu.persistence.mapper.UserMapper;
 import com.hjc.menu.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -18,6 +21,9 @@ public class UserController {
 
     @Autowired
     private IUserService userService;
+
+//    @Autowired
+//    private UserMapper userMapper;
 
     @RequestMapping(value = "showUser")
     public String index(HttpServletRequest request,Model model) {
