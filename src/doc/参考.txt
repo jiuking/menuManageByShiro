@@ -705,3 +705,11 @@ web.xml 中没有添加配置：
 
 
   导致 Controller中Service无法自动注入。
+
+  jsp页面${}无效 ，其直接展示出来。
+  web.xml 中 申明
+  <!DOCTYPE web-app PUBLIC
+   "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+   "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+   2_3.dtd 版本低，导致无法解析EL。可更改为2.5及以上。

@@ -7,5 +7,6 @@
 
 <body>
 ${user.userName} +sadfa
+<%=new Date() %>
 </body>
 </html>
