@@ -713,3 +713,24 @@ web.xml 中没有添加配置：
    "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
    2_3.dtd 版本低，导致无法解析EL。可更改为2.5及以上。
+
+   shiro xml配置文件中successUrl不起作用，
+
+   原因是这样的：
+
+   　　successUrl配置只是做为一种附加配置，只有session中没有用户请求地址时才会使用successUrl。系统默认的是认证成功后跳转到上一次请求的路径，如果是首次请求，那shiro就会跳转到默认虚拟路径“/”，也就是跳转到index.jsp。
+
+   解决方法：
+
+   　　简单一点的话就可以直接在index.jsp里面把请求重定向到你指定的页面
+
+   https://www.cnblogs.com/yeming/p/5480639.html
+
+   20180307
+   修改logincontrol中重定向到指定的路径下，但如果账号或密码报错，展示页面不友好。考虑更好的方式。可以考虑是否利用配置文件中successURL是否更可行
+
+   http://blog.csdn.net/babys/article/details/51490801
+
+   http://blog.csdn.net/rongku/article/details/51336424
+
+   -----参考 end ---
