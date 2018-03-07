@@ -11,6 +11,7 @@
   <properties>
     <spring-version>4.3.14.RELEASE</spring-version>
     <mybatis-version>3.4.5</mybatis-version>
+    <shiro-version>1.4.0</shiro-version>
   </properties>
 
   <dependencies>
@@ -181,6 +182,33 @@
       <scope>provided</scope>
     </dependency>
 
+    <!-- shiro start -->
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-core</artifactId>
+      <version>${shiro-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-spring</artifactId>
+      <version>${shiro-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-ehcache</artifactId>
+      <version>${shiro-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-web</artifactId>
+      <version>${shiro-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-quartz</artifactId>
+      <version>${shiro-version}</version>
+    </dependency>
+    <!-- shiro end -->
 
   </dependencies>
   <build>
