@@ -728,7 +728,11 @@ web.xml 中没有添加配置：
 
    20180307
    修改logincontrol中重定向到指定的路径下，但如果账号或密码报错，展示页面不友好。考虑更好的方式。可以考虑是否利用配置文件中successURL是否更可行
-还有就是 shiro配置文件中 formAuthenticationFilter 拦截问题，是否不用再logincontroller中再使用登录subject.login()。也就是使用表单filter的意义。
+还有就是 shiro配置文件中
+formAuthenticationFilter 拦截问题，是否不用再logincontroller中再使用登录subject.login()。也就是使用表单filter的意义。
+
+formAuthenticationFilter 配置完后确实不需要再在登录Controller中配置subject.login()
+
    http://blog.csdn.net/babys/article/details/51490801
 
    http://blog.csdn.net/rongku/article/details/51336424

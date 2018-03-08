@@ -17,8 +17,9 @@ public class LoginController {
 
     //返回登录页面
     @RequestMapping("/index")
+    @ResponseBody
     public String index() {
-        return "login";
+        return "login index";
     }
 
     @RequestMapping(value = "login",produces = {"application/json;charset=UTF-8"})
@@ -27,11 +28,17 @@ public class LoginController {
         String result = "";
         log.info("用户名:{}",username);
         log.info("密码:{}",password);
-        Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
-        subject.login(token);
+//        Subject subject = SecurityUtils.getSubject();
+//        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+//        subject.login(token);
 //        result = "SUCCESS";//登录成功
-        return "redirect:/success";
+//        return "redirect:/success";
+        return "login";
+    }
+
+    @RequestMapping("/")
+    public String index1() {
+        return "login";
     }
 
     @RequestMapping(value = "/success", produces = {"application/json;charset=UTF-8"})

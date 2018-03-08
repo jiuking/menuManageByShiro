@@ -10,27 +10,27 @@
     <bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter">
         <property name="usernameParam" value="username" />
         <property name="passwordParam" value="password"/>
-        <property name="loginUrl" value="/index"/>
+        <property name="loginUrl" value="/login"/>
     </bean>
 
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value="/index"/>
+        <property name="loginUrl" value="/login"/>
         <property name="successUrl" value="/success"/>
         <property name="unauthorizedUrl" value="/view/401"/>
-        <!--<property name="filters">
-            <util:map> 查看如何拦截过滤
+        <property name="filters">
+            <util:map> <!--查看如何拦截过滤-->
                 <entry key="authc" value-ref="formAuthenticationFilter" />
             </util:map>
-        </property>-->
+        </property>
         <property name="filterChainDefinitions">
             <value>
                 <!-- 静态资源允许访问 -->
+                /favicon.ico = anon
                 /app/** = anon
                 /assets/** = anon
                 <!-- 登录页允许访问 -->
-                /index = anon
-                /login = anon
+                <!--/index = anon-->
                 <!--/login = anon-->
                 <!-- 其他资源需要认证 -->
                 /** = authc
