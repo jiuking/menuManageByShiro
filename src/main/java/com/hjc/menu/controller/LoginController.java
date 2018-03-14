@@ -42,8 +42,8 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/success", produces = {"application/json;charset=UTF-8"})
-    @ResponseBody
+//    @ResponseBody
     public String success() {
-        return new String("Success");
+        return new String("success");
     }
 }
