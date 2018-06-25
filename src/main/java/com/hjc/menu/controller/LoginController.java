@@ -59,7 +59,7 @@ public class LoginController {
 
 
          */
-        return "redirect:/success";//forward
+//        return "redirect:/success";//forward
 //        return "redirect:/success";
         return "login";
     }
