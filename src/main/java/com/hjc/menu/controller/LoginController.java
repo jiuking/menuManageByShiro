@@ -27,9 +27,9 @@ public class LoginController {
         String result = "";
         log.info("用户名:{}",username);
         log.info("密码:{}",password);
-        Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
-        subject.login(token);
+//        Subject subject = SecurityUtils.getSubject();
+//        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+//        subject.login(token);
 //        result = "SUCCESS";//登录成功
         /**
          * forward 转发，如return "forward:/hello"; 浏览器的地址栏不会变，但是有视图返回来
@@ -60,11 +60,18 @@ public class LoginController {
 
          */
         return "redirect:/success";//forward
+//        return "redirect:/success";
+        return "login";
+    }
+
+    @RequestMapping("/")
+    public String index1() {
+        return "login";
     }
 
     @RequestMapping(value = "/success", produces = {"application/json;charset=UTF-8"})
-    @ResponseBody
+//    @ResponseBody
     public String success() {
-        return new String("Success");
+        return new String("success");
     }
 }
