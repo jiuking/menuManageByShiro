@@ -25,7 +25,10 @@ public final class CheckObjEmptyUtil {
                     Object object = field.get(objOri);
                     if (object instanceof List) {
                         for (Object obj : (List) object) {
-                            return checkField(obj);
+                            String result = checkField(obj);
+                            if (result != null) {
+                                return result;
+                            }
                         }
                     }
                 }
