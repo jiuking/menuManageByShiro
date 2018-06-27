@@ -27,6 +27,7 @@ public class LoginController {
         String result = "";
         log.info("用户名:{}",username);
         log.info("密码:{}",password);
+        System.out.println("asdf");
 //        Subject subject = SecurityUtils.getSubject();
 //        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
 //        subject.login(token);
